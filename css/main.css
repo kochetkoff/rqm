@@ -26,7 +26,6 @@ html {
 }
 
 button {
-    /* margin-bottom: 0.5rem; */
     margin-top: 1rem;
 }
 #wrap {
@@ -34,8 +33,6 @@ button {
     height: 100vh;
     background-color: black;
     background-size: cover;
-    /*background: url(../img/bg2.jpg) center; */
-    /* background-image: linear-gradient(to bottom, white, white 20%, rgba(0, 0, 255, 0.6) 80%, rgba(0, 0, 255, 0.8) 95%, blue); */
 }
 #wrap div h1 span{
     display: inline-block;

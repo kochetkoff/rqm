@@ -1,5 +1,5 @@
 /**
- * Created by Artyom on 17.01.2017.
+ * Created by Artyom Kochetkoff on 17.01.2017.
  */
 $(document).ready(function () {
     $.ajaxSetup({ cache: false });
