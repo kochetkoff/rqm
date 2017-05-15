@@ -4,7 +4,30 @@
 $(document).ready(function () {
     $.ajaxSetup({ cache: false });
     var imgCount, images, quotes;
-    images = ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png", "9.png", "10.png", "11.png", "12.png", "13.png", "14.png", "15.png", "16.png", "17.png", "18.png", "19.png", "20.png", "21.png", "22.png"];
+    images = [
+        "https://raw.githubusercontent.com/kochetkoff/rqm/master/img/1.png",
+        "https://raw.githubusercontent.com/kochetkoff/rqm/master/img/2.png",
+        "https://raw.githubusercontent.com/kochetkoff/rqm/master/img/3.png",
+        "https://raw.githubusercontent.com/kochetkoff/rqm/master/img/4.png",
+        "https://raw.githubusercontent.com/kochetkoff/rqm/master/img/5.png",
+        "https://raw.githubusercontent.com/kochetkoff/rqm/master/img/6.png",
+        "https://raw.githubusercontent.com/kochetkoff/rqm/master/img/7.png",
+        "https://raw.githubusercontent.com/kochetkoff/rqm/master/img/8.png",
+        "https://raw.githubusercontent.com/kochetkoff/rqm/master/img/9.png",
+        "https://raw.githubusercontent.com/kochetkoff/rqm/master/img/10.png",
+        "https://raw.githubusercontent.com/kochetkoff/rqm/master/img/11.png",
+        "https://raw.githubusercontent.com/kochetkoff/rqm/master/img/12.png",
+        "https://raw.githubusercontent.com/kochetkoff/rqm/master/img/13.png",
+        "https://raw.githubusercontent.com/kochetkoff/rqm/master/img/14.png",
+        "https://raw.githubusercontent.com/kochetkoff/rqm/master/img/15.png",
+        "https://raw.githubusercontent.com/kochetkoff/rqm/master/img/16.png",
+        "https://raw.githubusercontent.com/kochetkoff/rqm/master/img/17.png",
+        "https://raw.githubusercontent.com/kochetkoff/rqm/master/img/18.png",
+        "https://raw.githubusercontent.com/kochetkoff/rqm/master/img/19.png",
+        "https://raw.githubusercontent.com/kochetkoff/rqm/master/img/20.png",
+        "https://raw.githubusercontent.com/kochetkoff/rqm/master/img/21.png",
+        "https://raw.githubusercontent.com/kochetkoff/rqm/master/img/22.png"
+    ];
     quotes = [];
     function randItem(arr) {
         return Math.floor(Math.random()*arr.length);
@@ -15,7 +38,7 @@ $(document).ready(function () {
             var newImgCount = randItem(images);
             if(newImgCount !== imgCount) isMatch = false;
         }
-        $("#wrap").css("background", "url(/random-quote-machine/img/" + images[newImgCount] + ") center");
+        $("#wrap").css("background", "url(" + images[newImgCount] + ") center");
         imgCount = newImgCount;
     }
     function setQuote () {
@@ -55,9 +78,11 @@ $(document).ready(function () {
     }
     function quotesFill() {
         getOneQuote();
-        if (quotes.length < 5) {
-            setTimeout(quotesFill, 1000);
-        }
+        setTimeout(function() {
+            if (quotes.length < 5) {
+                quotesFill();
+            }
+        }, 1000);
     }
     var twitUrlBase = "https://twitter.com/intent/tweet";
     changeBG();
