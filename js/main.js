@@ -38,7 +38,7 @@ $(document).ready(function () {
             var newImgCount = randItem(images);
             if(newImgCount !== imgCount) isMatch = false;
         }
-        $("#wrap").css("background", "url(" + images[newImgCount] + ") center");
+        $("#wrap").css("background", "url(" + images[newImgCount] + ")");
         imgCount = newImgCount;
     }
     function setQuote () {

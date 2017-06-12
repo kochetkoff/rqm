@@ -30,9 +30,8 @@ button {
 }
 #wrap {
     padding-top: 2rem;
-    height: 100vh;
+    min-height: 100vh;
     background-color: black;
-    background-size: cover;
 }
 #wrap div h1 span{
     display: inline-block;
